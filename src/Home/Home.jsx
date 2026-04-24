@@ -1,44 +1,29 @@
-import { UserContext } from '../Context/UserContext.jsx';
+import { CreateContext } from '../Context/UseContext'
 import { useState, useEffect, useContext } from 'react'
 
 export const Home = () => {
-    // Pull exactly what you need from Context
-    const { usersData, usersPostData, isLoading } = useContext(UserContext);
+    const { userData, isloading } = useContext(CreateContext)
 
     return (
         <>
             <br />
             <h2>React Scalable Contect Architecture</h2>
             <br />
-
-            {isLoading ? <h3>Loading...</h3> :
-                <div>
-                    <h2>List Of Users</h2>
-
-                    {usersData && usersData.map((user, i) => {
-                        return (
-                            <>
-                                <ul>
-                                    <li style={{ listStyle: 'none' }} key={i}><b> User name: </b>{user.name}</li>
-                                </ul>
-
-                            </>
-                        )
-                    })}
-                    <div>
-                        <h2>Users Posts</h2>
-                        {usersPostData && usersPostData.map((post, i) => {
+            <div>
+                {isloading ? <h3>Loading.....</h3> :
+                    <>
+                        {userData && userData.map((user, index) => {
                             return (
-                                <>
-                                    <ul>
-                                        <li style={{ listStyle: 'none' }} key={`index-${i}`}> <b>Post title:</b> {post.title}</li>
-                                    </ul>
-                                </>
+                                <ul>
+                                    <li style={{listStyle:'none'}} key={`index-${index}`} > {user?.name} </li>
+                                </ul>
                             )
+
                         })}
-                    </div>
-                </div>
-            }
+                    </>
+                }
+            </div>
+
         </>
     )
 }
