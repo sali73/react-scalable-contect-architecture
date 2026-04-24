@@ -19,7 +19,7 @@ export const Home = () => {
                         return (
                             <>
                                 <ul>
-                                    <li style={{ listStyle: 'none' }} key={i}><b> user name: </b>{user.name}</li>
+                                    <li style={{ listStyle: 'none' }} key={i}><b> User name: </b>{user.name}</li>
                                 </ul>
 
                             </>
@@ -31,9 +31,8 @@ export const Home = () => {
                             return (
                                 <>
                                     <ul>
-                                        <li style={{ listStyle: 'none' }} key={`index-${i}`}> <b>Post Title:</b> {post.title}</li>
+                                        <li style={{ listStyle: 'none' }} key={`index-${i}`}> <b>Post title:</b> {post.title}</li>
                                     </ul>
-
                                 </>
                             )
                         })}
