@@ -8,12 +8,12 @@ export const Home = () => {
     return (
         <>
             <br />
-            <h2>Welcome!</h2>
+            <h2>React Scalable Contect Architecture</h2>
             <br />
 
             {isLoading ? <h3>Loading...</h3> :
                 <div>
-                    <h2>List of users</h2>
+                    <h2>List Of Users</h2>
 
                     {usersData && usersData.map((user, i) => {
                         return (
@@ -26,8 +26,7 @@ export const Home = () => {
                         )
                     })}
                     <div>
-                        <h2>Post of users</h2>
-
+                        <h2>Users Posts</h2>
                         {usersPostData && usersPostData.map((post, i) => {
                             return (
                                 <>

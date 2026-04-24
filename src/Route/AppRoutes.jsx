@@ -12,13 +12,12 @@ export const AppRoutes = () => {
             <nav style={{ width: '350px', backgroundColor: 'lightgray', margin: '0 auto', padding: '20px 0px', }}>
                 <Link to='/home'>Home</Link>
                 <Link style={{padding: '0px 40px'}} to='/user-form'>Form</Link>
-                <Link to='/not-found'>Page Not Found!</Link>
             </nav>
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/home' element={<Home />} />
                 <Route path='/user-form' element={<UserForm />} />
-                <Route path='/not-found' element={<PageNotFound />} />
+                <Route path='*' element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>
     )
