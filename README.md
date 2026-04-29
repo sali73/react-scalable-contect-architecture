@@ -10,7 +10,7 @@ A professional implementation of React's Context API to handle global state effi
 ### 🛠️ Tech Stack
 - **Frontend:** React.js
 - **Styling:** Tailwind CSS
-- **Tools:** Hooks (useReducer, useContext)
+- **Tools:** Hooks (useReducer, useContext, useMemo)
 
 ### 💡 Why Context API?
 I chose Context API for this project to demonstrate how to handle medium-scale state management natively within React, ensuring a lightweight and performant application.
