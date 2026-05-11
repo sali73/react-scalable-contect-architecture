@@ -1,29 +1,30 @@
-import { CreateContext } from '../Context/UseContext'
-import { useState, useEffect, useContext } from 'react'
+import { useCallback, useContext } from 'react'; // متنسيش الـ useContext
+import { CreateContext } from '../Context/UseContext';
+import UserItem from '../User/UserItem.jsx';
 
 export const Home = () => {
-    const { userData, isloading } = useContext(CreateContext)
+    const { userData, isloading } = useContext(CreateContext);
+
+    const handleUserClick = useCallback((id) => {
+        console.log("User ID clicked: ", id); 
+    }, []); 
+
+    if (isloading) return <h3>Loading.....</h3>;
 
     return (
-        <>
+        <div>
             <br />
-            <h2>React Scalable Contect Architecture</h2>
+            <h2>React Scalable Context Architecture</h2>
             <br />
-            <div>
-                {isloading ? <h3>Loading.....</h3> :
-                    <>
-                        {userData && userData.map((user, index) => {
-                            return (
-                                <ul>
-                                    <li style={{listStyle:'none'}} key={`index-${index}`} > {user?.name} </li>
-                                </ul>
-                            )
-
-                        })}
-                    </>
-                }
-            </div>
-
-        </>
-    )
-}
+            <ul>
+                {userData && userData.map((user) => (
+                    <UserItem 
+                        name={user?.name} 
+                        id={user.id} 
+                        onClick={handleUserClick} 
+                    />
+                ))}
+            </ul>
+        </div>
+    );
+};

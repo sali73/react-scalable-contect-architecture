@@ -1,19 +1,23 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import { Home } from '../Home/Home.jsx'
-import { PageNotFound } from '../PageNotFound/PageNotFound.jsx'
-import { Link } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
+
+const Home = lazy(() => 
+  import('../Home/Home.jsx').then(module => ({ default: module.Home }))
+);
 
 export const AppRoutes = () => {
     return (
         <BrowserRouter>
-            <nav style={{ width: '350px', backgroundColor: 'lightgray', margin: '0 auto', padding: '20px 0px', }}>
-                <Link to='/home'>Home</Link>
+            <nav style={{ padding: '20px', background: '#eee' }}> 
+                <Link to='/home'>Home</Link> 
             </nav>
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/home' element={<Home />} />
-                <Route path='*' element={<PageNotFound />} />
-            </Routes>
+            
+            <Suspense fallback={<div>Loading Page...</div>}>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/home' element={<Home />} />
+                </Routes>
+            </Suspense>
         </BrowserRouter>
-    )
-}
+    );
+};
