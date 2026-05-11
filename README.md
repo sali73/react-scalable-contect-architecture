@@ -1,16 +1,16 @@
-# React + Vite
+# Context API State Management 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional implementation of React's Context API to handle global state efficiently without prop drilling.
 
-Currently, two official plugins are available:
+### ✨ Key Features
+- **Centralized State:** Managed global data using `createContext` and `useContext`.
+- **Performance Optimized:** Implemented logic to prevent unnecessary re-renders.
+- **Clean Architecture:** Separated Context Providers from UI components for better maintainability.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🛠️ Tech Stack
+- **Frontend:** React.js
+- **Styling:** Tailwind CSS
+- **Tools:** Hooks (useReducer, useContext, useMemo)
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 💡 Why Context API?
+I chose Context API for this project to demonstrate how to handle medium-scale state management natively within React, ensuring a lightweight and performant application.
